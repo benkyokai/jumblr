@@ -317,6 +317,7 @@ public class Post extends Resource {
      */
     public void like() {
         client.like(this.id, this.reblog_key);
+        liked = true;
     }
 
     /**
@@ -324,6 +325,7 @@ public class Post extends Resource {
      */
     public void unlike() {
         client.unlike(this.id, this.reblog_key);
+        liked = false;
     }
 
     /**
