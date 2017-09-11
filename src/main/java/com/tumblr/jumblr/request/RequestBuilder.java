@@ -41,7 +41,7 @@ public class RequestBuilder {
         sign(request);
         request.setFollowRedirects(false);
         Response response = request.send();
-        if (response.getCode() == 301) {
+        if (300 <= response.getCode() && response.getCode() < 400) {
             return response.getHeader("Location");
         } else {
             throw new JumblrException(response);
